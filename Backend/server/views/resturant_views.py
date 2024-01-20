@@ -1,5 +1,5 @@
 from flask import Blueprint,request,jsonify
-from models import Resturant,db,Pizza
+from models import Resturant,db
 
 
 
