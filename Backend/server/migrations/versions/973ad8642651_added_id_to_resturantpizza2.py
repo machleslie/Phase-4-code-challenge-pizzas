@@ -1,8 +1,8 @@
-"""changed relationship
+"""added id to resturantpizza2
 
-Revision ID: dcd4538451d9
+Revision ID: 973ad8642651
 Revises: 
-Create Date: 2024-01-20 14:27:23.607449
+Create Date: 2024-01-21 13:19:52.936095
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'dcd4538451d9'
+revision = '973ad8642651'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -31,12 +31,13 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('resturant_pizza',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('resturant_id', sa.Integer(), nullable=False),
-    sa.Column('pizza_id', sa.Integer(), nullable=False),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
+    sa.Column('resturant_id', sa.Integer(), nullable=True),
+    sa.Column('pizza_id', sa.Integer(), nullable=True),
+    sa.Column('price', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['pizza_id'], ['pizzas.id'], ),
     sa.ForeignKeyConstraint(['resturant_id'], ['resturants.id'], ),
-    sa.PrimaryKeyConstraint('id', 'resturant_id', 'pizza_id')
+    sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
 
