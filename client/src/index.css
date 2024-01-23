@@ -5,16 +5,16 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: tomato;
+    background-color: teal;
   }
   
   a {
-    color: firebrick;
+    color: blueviolet;
   }
   
   header {
     padding: 8px;
-    background-color: wheat;
+    background-color: thistle;
     display: flex;
     justify-content: space-between;
   }
